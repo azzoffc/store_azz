@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Store AzzOffc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #4ecca3;
+            text-shadow: 0 0 10px rgba(78, 204, 163, 0.5);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            color: #eeeeee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .telegram-connect {
+            display: inline-block;
+            background: #0088cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-top: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .telegram-connect:hover {
+            background: #006da3;
+            transform: scale(1.05);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: #4ecca3;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4ecca3;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            color: #eeeeee;
+            margin-bottom: 15px;
+        }
+        
+        .order-btn {
+            background: linear-gradient(to right, #4ecca3, #2c9680);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: auto;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .order-btn:hover {
+            background: linear-gradient(to right, #2c9680, #4ecca3);
+            box-shadow: 0 0 15px rgba(78, 204, 163, 0.5);
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, #4ecca3, #2c9680);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #eeeeee;
+        }
+        
+        .telegram-icon {
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 : 𝐀𝐳𝐳𝐳𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞</h1>
+            <p>Halo selamat datang di web saya azzoffc disini saya bikin web produk saya bisa juga memperbaiki dalam hosting anda,selamat berbelanja di toko saya</p>
+            <a href="https://t.me/AzzOffc" class="telegram-connect" target="_blank">
+                <i class="fab fa-telegram"></i> Hubungi via Telegram
+            </a>
+        </header>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-name">BASE TELEGRAM</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 10k</span></div>
+                <button class="order-btn" onclick="orderProduct('BASE TELEGRAM', 10000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">BASE WHATSAPP</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 10k</span></div>
+                <button class="order-btn" onclick="orderProduct('BASE WHATSAPP', 10000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">FUNCTION BUG</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 15k</span></div>
+                <button class="order-btn" onclick="orderProduct('FUNCTION BUG', 15000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">PANEL UNLI</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 9k</span></div>
+                <button class="order-btn" onclick="orderProduct('PANEL UNLI', 9000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BUG WHATSAPP</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 3k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BUG WHATSAPP', 3000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BANNED WHATSAP SPAM</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 25k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BANNED WHATSAP SPAM', 25000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BANNED WHATSAP PERMANEN</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 55k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BANNED WHATSAP PERMANEN', 55000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">SCRIPT TREDICT INVICTUS</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 25k</span></div>
+                <button class="order-btn" onclick="orderProduct('SCRIPT TREDICT INVICTUS', 25000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">PARTNER BIASA</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 25k</span></div>
+                <button class="order-btn" onclick="orderProduct('PARTNER BIASA', 25000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">PARTNER PRIBADI</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 35k</span></div>
+                <button class="order-btn" onclick="orderProduct('PARTNER PRIBADI', 35000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BIKIN WEBSITE STORE</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 6k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BIKIN WEBSITE STORE', 6000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BIKIN WEBSITE PAYMENT</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 3k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BIKIN WEBSITE PAYMENT', 3000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">PARTNER WEBSITE</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 20k</span></div>
+                <button class="order-btn" onclick="orderProduct('PARTNER WEBSITE', 20000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">MURID WEBSITE</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 15k</span></div>
+                <button class="order-btn" onclick="orderProduct('MURID WEBSITE', 15000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BIKIN SCRIPT WA BUG</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 25k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BIKIN SCRIPT WA BUG', 25000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA BIKIN SCRIPT TELEGRAM BUG</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 30k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA BIKIN SCRIPT TELEGRAM BUG', 30000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-name">JASA RENAME SCRIPT BUG</div>
+                <div class="product-price">Harga: <span class="highlight">Rp 10k</span></div>
+                <button class="order-btn" onclick="orderProduct('JASA RENAME SCRIPT BUG', 10000)">
+                    <i class="fab fa-telegram telegram-icon"></i> Order
+                </button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 𝗖𝗿𝗲𝗱𝗶𝘁 𝗔𝗻𝗱 𝗧𝗵𝗮𝗻𝗸𝘀 𝗧𝗼</p>
+𝐀𝐳𝐳𝐳𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥𝐥 [𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚆𝚎𝚋]</p>
+𝐍𝐚𝐳𝐰𝐚𝐚𝐚 [𝙼𝚢 𝙶𝚒𝚛𝚕]</p>
+𝐉𝐚𝐩𝐚𝐫𝐫 [𝙱𝚎𝚜𝚝𝚏𝚛𝚒𝚎𝚗𝚍]</p>
+𝐘𝐨𝐫𝐫𝐎𝐟𝐟𝐜 [𝙱𝚎𝚜𝚝𝚏𝚛𝚒𝚎𝚗𝚍]</p>
+𝐆𝐚𝐚𝐎𝐟𝐟𝐜 [𝙱𝚎𝚜𝚝𝚏𝚛𝚒𝚎𝚗𝚍]</p>
+𝐈𝐝𝐢𝐥𝐎𝐟𝐟𝐜 [𝙱𝚎𝚜𝚝𝚏𝚛𝚒𝚎𝚗𝚍]</p>
+𝐃𝐢𝐭𝐳𝐳𝐎𝐟𝐟𝐜 [𝙱𝚎𝚜𝚝𝚏𝚛𝚒𝚎𝚗𝚍]</p>
+𝐊𝐲𝐲𝐎𝐟𝐟𝐜 [𝙿𝚊𝚛𝚝𝚗𝚎𝚛]</p>
+        </footer>
+    </div>
+
+    <script>
+        function orderProduct(productName, price) {
+            // Format pesan untuk Telegram
+            const message = `Halo, saya ingin memesan:\nProduk: ${productName}\nHarga: Rp ${price.toLocaleString('id-ID')}\n\nTerima kasih!`;
+            
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirect ke Telegram dengan pesan yang sudah diformat
+            window.open(`https://t.me/AzzOffc?text=${encodedMessage}`, '_blank');
+            
+            // Tampilkan konfirmasi kepada pengguna
+            alert(`Anda akan memesan: ${productName}\nAnda akan diarahkan ke Telegram untuk menyelesaikan pemesanan.`);
+        }
+    </script>
+</body>
+</html>
